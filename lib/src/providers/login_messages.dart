@@ -38,45 +38,45 @@ class LoginMessages with ChangeNotifier {
     this.recoverCodePasswordDescription = defaultRecoverCodePasswordDescription,
   });
 
-  static const defaultPasswordHint = 'Password';
-  static const defaultConfirmPasswordHint = 'Confirm Password';
-  static const defaultForgotPasswordButton = 'Forgot Password?';
-  static const defaultLoginButton = 'LOGIN';
-  static const defaultSignupButton = 'SIGNUP';
-  static const defaultRecoverPasswordButton = 'RECOVER';
-  static const defaultRecoverPasswordIntro = 'Reset your password here';
+  static const defaultPasswordHint = 'Пароль';
+  static const defaultConfirmPasswordHint = 'Підтвердіть пароль';
+  static const defaultForgotPasswordButton = 'Забули пароль?';
+  static const defaultLoginButton = 'УВІЙТИ';
+  static const defaultSignupButton = 'ЗАРЕЄСТРУВАТИСЯ';
+  static const defaultRecoverPasswordButton = 'ВІДНОВИТИ';
+  static const defaultRecoverPasswordIntro = 'Скидання пароля';
   static const defaultRecoverPasswordDescription =
-      'We will send your plain-text password to this email account.';
+      'Ми надішлемо ваш пароль у відкритому вигляді на цю електронну пошту.';
   static const defaultRecoverCodePasswordDescription =
-      'We will send a password recovery code to your email.';
-  static const defaultGoBackButton = 'BACK';
-  static const defaultConfirmPasswordError = 'Password do not match!';
-  static const defaultRecoverPasswordSuccess = 'An email has been sent';
-  static const defaultflushbarTitleSuccess = 'Success';
-  static const defaultflushbarTitleError = 'Error';
-  static const defaultSignUpSuccess = 'An activation link has been sent';
-  static const defaultProvidersTitleFirst = 'or login with';
-  static const defaultProvidersTitleSecond = 'or';
-  static const defaultAdditionalSignUpSubmitButton = 'SUBMIT';
+      'Ми надішлемо код для відновлення пароля на вашу електронну пошту.';
+  static const defaultGoBackButton = 'НАЗАД';
+  static const defaultConfirmPasswordError = 'Паролі не збігаються!';
+  static const defaultRecoverPasswordSuccess = 'Лист надіслано на електронну пошту';
+  static const defaultflushbarTitleSuccess = 'Успішно';
+  static const defaultflushbarTitleError = 'Помилка';
+  static const defaultSignUpSuccess = 'Посилання для активації надіслано';
+  static const defaultProvidersTitleFirst = 'або увійдіть через';
+  static const defaultProvidersTitleSecond = 'або';
+  static const defaultAdditionalSignUpSubmitButton = 'ПІДТВЕРДИТИ';
   static const defaultAdditionalSignUpFormDescription =
-      'Please fill in this form to complete the signup';
+      'Будь ласка, заповніть цю форму для завершення реєстрації';
 
   static const defaultConfirmRecoverIntro =
-      'The recovery code to set a new password was sent to your email.';
-  static const defaultRecoveryCodeHint = 'Recovery Code';
-  static const defaultRecoveryCodeValidationError = 'Recovery code is empty';
-  static const defaultSetPasswordButton = 'SET PASSWORD';
-  static const defaultConfirmRecoverSuccess = 'Password recovered.';
+      'Код для відновлення пароля надіслано на вашу електронну пошту.';
+  static const defaultRecoveryCodeHint = 'Код відновлення';
+  static const defaultRecoveryCodeValidationError = 'Код відновлення не заповнено';
+  static const defaultSetPasswordButton = 'ВСТАНОВИТИ ПАРОЛЬ';
+  static const defaultConfirmRecoverSuccess = 'Пароль відновлено.';
   static const defaultConfirmSignupIntro =
-      'A confirmation code was sent to your email. '
-      'Please enter the code to confirm your account.';
-  static const defaultConfirmationCodeHint = 'Confirmation Code';
+      'Код підтвердження надіслано на вашу електронну пошту. '
+      'Будь ласка, введіть його для підтвердження акаунту.';
+  static const defaultConfirmationCodeHint = 'Код підтвердження';
   static const defaultConfirmationCodeValidationError =
-      'Confirmation code is empty';
-  static const defaultResendCodeButton = 'Resend Code';
-  static const defaultResendCodeSuccess = 'A new email has been sent.';
-  static const defaultConfirmSignupButton = 'CONFIRM';
-  static const defaultConfirmSignupSuccess = 'Account confirmed.';
+      'Код підтвердження не заповнено';
+  static const defaultResendCodeButton = 'Надіслати код ще раз';
+  static const defaultResendCodeSuccess = 'Новий лист надіслано.';
+  static const defaultConfirmSignupButton = 'ПІДТВЕРДИТИ';
+  static const defaultConfirmSignupSuccess = 'Акаунт підтверджено.';
 
   /// Hint text of the userHint [TextField]
   /// Default will be selected based on userType
