@@ -178,6 +178,9 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
 
     _formKey.currentState!.save();
     await _submitController.forward();
+
+    if (!mounted) return false;
+
     setState(() => _isSubmitting = true);
 
     String? error;
@@ -213,28 +216,24 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       }
     }
 
-    // workaround to run after _cardSizeAnimation in parent finished
-    // need a cleaner way but currently it works so..
     Future.delayed(const Duration(milliseconds: 270), () {
-      if (mounted) {
-        setState(() => _showShadow = false);
-      }
+      if (!mounted) return;
+      setState(() => _showShadow = false);
     });
 
-    if (context.mounted) {
-      await _submitController.reverse();
-    }
+    if (!mounted) return false;
+    await _submitController.reverse();
 
     if (!isNullOrEmpty(error)) {
-      if (context.mounted) {
-        showErrorToast(context, messages.flushbarTitleError, error!);
-      }
+      if (!mounted) return false;
+      showErrorToast(context, messages.flushbarTitleError, error!);
 
       Future.delayed(const Duration(milliseconds: 271), () {
-        if (mounted) {
-          setState(() => _showShadow = true);
-        }
+        if (!mounted) return;
+        setState(() => _showShadow = true);
       });
+
+      if (!mounted) return false;
       setState(() => _isSubmitting = false);
       return false;
     }
@@ -244,7 +243,6 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
           await widget.requireSignUpConfirmation();
       if (widget.requireAdditionalSignUpFields) {
         widget.onSwitchSignUpAdditionalData();
-        // The login page wil be shown in login mode (used if loginAfterSignUp disabled)
         _switchAuthMode();
         return false;
       } else if (requireSignUpConfirmation) {
@@ -252,15 +250,15 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
         _switchAuthMode();
         return false;
       } else if (!widget.loginAfterSignUp) {
-        if (context.mounted) {
-          showSuccessToast(
-            context,
-            messages.flushbarTitleSuccess,
-            messages.signUpSuccess,
-          );
-        }
+        if (!mounted) return false;
+        showSuccessToast(
+          context,
+          messages.flushbarTitleSuccess,
+          messages.signUpSuccess,
+        );
 
         _switchAuthMode();
+        if (!mounted) return false;
         setState(() => _isSubmitting = false);
         return false;
       }
